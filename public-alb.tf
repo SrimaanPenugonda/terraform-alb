@@ -11,7 +11,7 @@ resource "aws_lb" "public" {
   }
 }
 
-//security grp
+//security grp for alb
 resource "aws_security_group" "allow_alb_public" {
   name                  = "allow-public-alb-sg"
   description           = "allow-public-alb-sg"
