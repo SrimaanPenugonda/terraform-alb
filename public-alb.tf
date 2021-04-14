@@ -13,8 +13,10 @@ resource "aws_lb" "public" {
 
 //security grp
 resource "aws_security_group" "allow_alb_public" {
-name                  = "allow-public-ami-sg"
-description           = "allow-public-ami-sg"
+  name                  = "allow-public-ami-sg"
+  description           = "allow-public-ami-sg"
+  vpc_id                = data.terraform_remote_state.vpc.outputs.VPC_ID
+
 
 ingress {
 description           = "HTTP"
