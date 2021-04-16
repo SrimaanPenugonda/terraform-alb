@@ -1,0 +1,10 @@
+created public load balancer in public subnet to access the frontend which is in private subnet
+
+S28:
+now create private load balancer to access the remaining
+ resource "aws_lb" "private"
+resource "aws_security_group" "allow_alb_private"
+cidr_blocks           = main vpc cidr
+resource "aws_lb_listener" "default" {
+
+default_action
