@@ -7,3 +7,4 @@ now create private load balancer to access the remaining
     cidr_blocks           = main vpc cidr
     resource "aws_lb_listener" "default" {
     default_action - fixed response as OK
+
