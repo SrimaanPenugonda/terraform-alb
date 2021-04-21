@@ -1,3 +1,4 @@
+#public load balancer
 resource "aws_lb" "public" {
   name               = "${var.PROJECT_NAME}-${var.ENV}-public-alb"
   internal           = false
