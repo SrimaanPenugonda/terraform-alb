@@ -5,6 +5,10 @@ resource "aws_lb" "public" {
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_alb_public.id]
   subnets            = data.terraform_remote_state.vpc.outputs.PUBLIC_SUBNETS
+  timeouts {
+    create = "30m"
+    delete = "30m"
+  }
 
   tags = {
     Name              = "public-${var.PROJECT_NAME}${var.ENV}-public-alb"

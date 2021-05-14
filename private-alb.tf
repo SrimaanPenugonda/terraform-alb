@@ -4,7 +4,10 @@ resource "aws_lb" "private" {
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow-alb-private.id]
   subnets            = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNETS
-
+  timeouts {
+    create = "30m"
+    delete = "30m"
+  }
   tags = {
     Name              = "private-${var.PROJECT_NAME}${var.ENV}-private-alb"
     Environment       = var.ENV
