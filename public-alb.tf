@@ -42,12 +42,12 @@ Name                  = "allow-public-alb-sg"
 }
 }
 
-resource "aws_lb_listener" "frontend" {
-  load_balancer_arn = aws_lb.public.arn
-  port              = "80"
-  protocol          = "HTTP"
-  default_action {
-    type             = "forward"
-    target_group_arn = data.terraform_remote_state.frontend.outputs.FRONTEND_TG_ARN
-  }
-}
+//resource "aws_lb_listener" "frontend" {
+//  load_balancer_arn = aws_lb.public.arn
+//  port              = "80"
+//  protocol          = "HTTP"
+//  default_action {
+//    type             = "forward"
+//    target_group_arn = data.terraform_remote_state.frontend.outputs.FRONTEND_TG_ARN
+//  }
+//}
