@@ -9,11 +9,11 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
-data "terraform_remote_state" "frontend" {
-  backend        = "s3"
-  config         = {
-    bucket       = var.bucket //existing bucket name to access VPC state files
-    key          = "frontend/${var.ENV}/terraform.tfstate" //path in bucket
-    region       = var.region
-  }
-}
+//data "terraform_remote_state" "frontend" {
+//  backend        = "s3"
+//  config         = {
+//    bucket       = var.bucket //existing bucket name to access VPC state files
+//    key          = "frontend/${var.ENV}/terraform.tfstate" //path in bucket
+//    region       = var.region
+//  }
+//}
